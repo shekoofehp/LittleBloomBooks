@@ -187,6 +187,37 @@
       margin-top: 1.2rem;
     }
 
+    /* ── YouTube section ── */
+    .section-label {
+      font-family: 'Fredoka One', cursive;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: #000;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-note {
+      font-size: .82rem;
+      color: var(--muted);
+      margin-top: .7rem;
+      text-align: center;
+    }
 
     /* ── CTA buttons ── */
     .cta-row {
@@ -283,6 +314,23 @@
     </ul>
 
     <p><span class="age-badge">Ages 3 – 7</span></p>
+  </div>
+
+  <!-- Audio book / YouTube card -->
+  <div class="card">
+    <p class="section-label">
+      <span>🎧</span> Listen to the Story
+    </p>
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/1XXJlyqvvbA?list=PLMY4RFIIqTyy7GQtG58UQT0UfHY3vbwVn&rel=0"
+        title="The Mighty Mouse-Cat — Audio Book read-aloud by Cherry Bloom"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+    <p class="video-note">Full audio book read-aloud &mdash; perfect for winding down at bedtime&nbsp;🌙</p>
   </div>
 
   <!-- CTAs -->
