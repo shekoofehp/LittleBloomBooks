@@ -300,16 +300,13 @@
       border: 0;
   }
 
-  /* NEW LOGO BLOCKER: Sits ONLY over the YouTube logo in the bottom right */
-  /* It leaves the top part of the control bar (the timeline slider) completely open! */
-  .logo-blocker {
+  /* The Transparent Blocker (Stops clicks on the YouTube Logo) */
+  .control-blocker {
       position: absolute;
       bottom: 0;
-      right: 46px;       /* Starts right next to your custom maximize button */
-      width: 150px;      /* Wide enough to cover the YouTube branding text/logo */
-      height: 8%;        /* Shorter height so it doesn't overlap the timeline bar above it */
-      min-height: 28px;
-      max-height: 38px;
+      left: 0;
+      width: 100%;
+      height: 15%; 
       background: transparent;
       z-index: 10;
       pointer-events: auto;
@@ -320,14 +317,14 @@
       position: absolute;
       bottom: 0;
       right: 0;
-      width: 46px;      
+      width: 46px;      /* Perfect size to cover the standard native icon */
       height: 13%;      /* Matches the height of the native control bar */
       min-height: 36px;
       max-height: 48px;
       background: transparent; 
       border: none;
       cursor: pointer;
-      z-index: 20;      
+      z-index: 20;      /* Floats above the blocker and the iframe */
       display: flex;
       align-items: center;
       justify-content: center;
@@ -344,16 +341,13 @@
 
   .maximize-btn:hover svg {
       opacity: 1;
-      transform: scale(1.1);
+      transform: scale(1.1); /* Subtle pop on hover */
   }
 
   /* Hide/Show alternative states */
   .video-container.maximized .max-icon { display: none; }
   .video-container:not(.maximized) .exit-icon { display: none; }
 </style>
-
-
-
 <script>
   function toggleMaximize() {
       var container = document.getElementById('myVideoContainer');
@@ -398,7 +392,7 @@
       <li>Bedtime reading</li>
       <li>Animal lovers</li>
       <li>Cozy family story time</li>
-      <li>Learning to believe in yourself</li>
+      <li>Learning to believe in yourself.....</li>
     </ul>
 
     <p><span class="age-badge">Ages 3 – 7</span></p>
@@ -407,30 +401,10 @@
   <!-- Audio book / YouTube card -->
   <div class="video-container" id="myVideoContainer">
     <iframe 
-        src="https://www.youtube-nocookie.com/embed/1XXJlyqvvbA?rel=0&modestbranding=1&fs=0"  
-        title="Children's Book Video">
-    </iframe>
-    
-    <div class="logo-blocker"></div>
-    
-    <button class="maximize-btn" onclick="toggleMaximize()" title="Toggle Fullscreen">
-        <svg class="max-icon" viewBox="0 0 24 24">
-            <path d="M4 10h2V6h4V4H4v6zm16 4h-2v4h-4v2h6v-6zM18 4h-4v2h4v4h2V4zM6 14H4v6h6v-2H6v-4z"/>
-        </svg>
-        <svg class="exit-icon" viewBox="0 0 24 24">
-            <path d="M10 4H8v4H4v2h6V4zm4 16h2v-4h4v-2h-6v6zm2-12h-4V4h-2v6h6V8zM8 16v-2H2v2h4v4h2v-4z"/>
-        </svg>
-    </button>
-  </div>
-
-  
-  <!--
-  <div class="video-container" id="myVideoContainer">
-    <iframe 
         src="https://www.youtube-nocookie.com/embed/1XXJlyqvvbA?rel=0&modestbranding=1&fs=0&vq=hd1080" 
         title="Children's Book Video">
     </iframe>
-   <!-- 
+    
     <div class="control-blocker"></div>
     
     <button class="maximize-btn" onclick="toggleMaximize()" title="Toggle Fullscreen">
@@ -442,7 +416,6 @@
         </svg>
     </button>
 </div>
--->    
 <!--
 <div class="video-wrapper">
     <iframe 
